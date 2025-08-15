@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+:root {
+  --paper: #f9f5e7;
+  --ink: #222222;
+  --orange: #ff7a18;
+  --teal: #0ea5a3;
+  --line: #d8cfb3;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .retro-card {
+    @apply rounded-xl border shadow-lg;
+    border-color: var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+  }
+  .retro-button {
+    @apply rounded-md px-4 py-2 text-sm font-semibold transition-colors;
+    color: white;
+    background: linear-gradient(180deg, #ff9a4b, #ff7a18);
+  }
+  .retro-button:hover {
+    filter: brightness(1.05);
+  }
+  .retro-tab {
+    @apply px-3 py-1.5 rounded-md text-sm;
+    color: var(--ink);
+  }
+  .retro-tab--active {
+    background: linear-gradient(180deg, #0fbdb8, #0ea5a3);
+    color: white;
+  }
+}
